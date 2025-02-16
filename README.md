@@ -20,7 +20,7 @@ U 0 10,H 15 25
 0 10 15 25 0 10 15 25 0 10 15 25 0 10 15 16 17 18 19 20 21 22 23 24 25 0 10 15 25 1 9 15 25 2 3 4 5 6 7 8 15 25
  
 ## The expected output is:
- 
+<Pre>
 U         U    H         H
 U         U    H         H
 U         U    H         H
@@ -28,18 +28,22 @@ U         U    HHHHHHHHHHH
 U         U    H         H
  U       U     H         H
   UUUUUUU      H         H
- 
+ </Pre> 
 ## Process:
  
 Your solution must execute the following steps:
  
--Read the input lines from STDIN.
--Create n POSIX threads (where n is the number of lines in the image (width)). Each child thread executes the following tasks:
--- Receives the line number to print, the headPos and dataPos arrays, the information about the symbols to print from the main thread, and the memory location to store the results of the decoding process.
--- Decodes the assigned line using the Encoding Method for Sparse Binary Data..
--- Stores the decoded line on a memory location accessible by the main thread.
+- Read the input lines from STDIN.
+- Create n POSIX threads (where n is the number of lines in the image (width)). Each child thread executes the following tasks:
+
++ Receives the line number to print, the headPos and dataPos arrays, the information about the symbols to print from the main thread, and the memory location to store the results of the decoding process.
+
++ Decodes the assigned line using the Encoding Method for Sparse Binary Data..
+
++ Stores the decoded line on a memory location accessible by the main thread.
+
  
--Print the decoded image into STDOUT.
+- Print the decoded image into STDOUT.
  
 ## Notes:
 
